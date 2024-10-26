@@ -51,7 +51,7 @@ export async function deleteProject(app: FastifyInstance) {
 
         if (cannot('delete', authProject)) {
           throw new UnauthorizedError(
-            `You're not allowed to delete this project.`
+            `You're not allowed to delete this project.`,
           )
         }
 
@@ -62,6 +62,6 @@ export async function deleteProject(app: FastifyInstance) {
         })
 
         return reply.status(204).send()
-      }
+      },
     )
 }

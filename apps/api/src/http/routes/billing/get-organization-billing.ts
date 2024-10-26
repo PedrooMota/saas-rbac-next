@@ -50,7 +50,7 @@ export async function getOrganizationBilling(app: FastifyInstance) {
 
         if (cannot('get', 'Billing')) {
           throw new UnauthorizedError(
-            `You're not allowed to get billing details from this organization.`
+            `You're not allowed to get billing details from this organization.`,
           )
         }
 
@@ -83,6 +83,6 @@ export async function getOrganizationBilling(app: FastifyInstance) {
             total: amountOfMembers * 10 + amountOfProjects * 20,
           },
         }
-      }
+      },
     )
 }

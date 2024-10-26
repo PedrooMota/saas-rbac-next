@@ -53,7 +53,7 @@ export async function getProject(app: FastifyInstance) {
 
         if (cannot('get', 'Project')) {
           throw new UnauthorizedError(
-            `You're not allowed to see this projects.`
+            `You're not allowed to see this projects.`,
           )
         }
 
@@ -86,6 +86,6 @@ export async function getProject(app: FastifyInstance) {
         }
 
         return reply.send({ project })
-      }
+      },
     )
 }

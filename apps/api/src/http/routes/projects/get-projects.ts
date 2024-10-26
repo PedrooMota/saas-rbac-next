@@ -38,7 +38,7 @@ export async function getProjects(app: FastifyInstance) {
                     name: z.string().nullable(),
                     avatarUrl: z.string().url().nullable(),
                   }),
-                })
+                }),
               ),
             }),
           },
@@ -54,7 +54,7 @@ export async function getProjects(app: FastifyInstance) {
 
         if (cannot('get', 'Project')) {
           throw new UnauthorizedError(
-            `You're not allowed to see organization projects.`
+            `You're not allowed to see organization projects.`,
           )
         }
 
@@ -86,6 +86,6 @@ export async function getProjects(app: FastifyInstance) {
         })
 
         return reply.send({ projects })
-      }
+      },
     )
 }

@@ -1,8 +1,9 @@
 import { defineAbilityFor } from "@saas/auth";
-import { getProfile } from "@/http/get-profile";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+
 import { getMembership } from "@/http/get-membership";
+import { getProfile } from "@/http/get-profile";
 
 export function isAuthenticated() {
   return !!cookies().get("token")?.value;

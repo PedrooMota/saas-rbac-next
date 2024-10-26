@@ -47,7 +47,7 @@ export async function updateOrganization(app: FastifyInstance) {
 
         if (cannot('update', authOrganization)) {
           throw new UnauthorizedError(
-            `You're not allowed to update this organization.`
+            `You're not allowed to update this organization.`,
           )
         }
 
@@ -63,7 +63,7 @@ export async function updateOrganization(app: FastifyInstance) {
 
           if (organizationByDomain) {
             throw new BadRequestError(
-              'Another organization with same domain already exists.'
+              'Another organization with same domain already exists.',
             )
           }
         }
@@ -80,6 +80,6 @@ export async function updateOrganization(app: FastifyInstance) {
         })
 
         return reply.status(204).send()
-      }
+      },
     )
 }

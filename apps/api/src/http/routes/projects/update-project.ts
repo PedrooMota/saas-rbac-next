@@ -55,7 +55,7 @@ export async function updateProject(app: FastifyInstance) {
 
         if (cannot('update', authProject)) {
           throw new UnauthorizedError(
-            `You're not allowed to update this project.`
+            `You're not allowed to update this project.`,
           )
         }
 
@@ -72,6 +72,6 @@ export async function updateProject(app: FastifyInstance) {
         })
 
         return reply.status(204).send()
-      }
+      },
     )
 }

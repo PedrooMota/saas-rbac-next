@@ -70,6 +70,6 @@ export async function getInvite(app: FastifyInstance) {
       }
 
       return { invite }
-    }
+    },
   )
 }
